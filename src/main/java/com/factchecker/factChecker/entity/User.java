@@ -22,9 +22,9 @@ public class User {
 	
 	private String role;
 
-	public User(int id, String name, int age, String username, String password, String role) {
+	public User( String name, int age, String username, String password, String role) {
 		super();
-		this.id = id;
+		
 		this.name = name;
 		this.age = age;
 		this.username = username;

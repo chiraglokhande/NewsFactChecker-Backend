@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.factchecker.factChecker.dto.Response;
 import com.factchecker.factChecker.dto.UserDTO;
 import com.factchecker.factChecker.entity.User;
 import com.factchecker.factChecker.service.UserDetailsService;
@@ -38,14 +39,14 @@ public class AuthenticationController {
 	UserService userService;
 
 	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestBody UserDTO dto) {
+	public ResponseEntity<Response> login(@RequestBody UserDTO dto) {
 
 		try {
 			auth.authenticate(new UsernamePasswordAuthenticationToken(dto.getUsername(), dto.getPassword()));
 			UserDetails user = service.loadUserByUsername(dto.getUsername());
 			String JwtToken = util.generateToken(user.getUsername());
 
-			return ResponseEntity.ok(JwtToken);
+			return ResponseEntity.ok(new Response(JwtToken,user.getAuthorities().iterator().next().getAuthority()));
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ResponseEntity.ok(null);

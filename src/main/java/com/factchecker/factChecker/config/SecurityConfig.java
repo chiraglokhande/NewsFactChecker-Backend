@@ -37,7 +37,7 @@ public class SecurityConfig {
 
 		return http
 			    .cors(Customizer.withDefaults())
-				.authorizeHttpRequests(req -> req.requestMatchers("factcheck/**").authenticated().anyRequest().permitAll())
+				.authorizeHttpRequests(req -> req.requestMatchers("factcheck/**").authenticated().requestMatchers("user/**").authenticated().anyRequest().permitAll())
 				.csrf(cs -> cs.disable()).addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class).build();
 	}
 	
