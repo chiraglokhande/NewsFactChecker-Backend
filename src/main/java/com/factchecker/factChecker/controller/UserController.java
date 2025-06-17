@@ -17,7 +17,7 @@ import com.factchecker.factChecker.service.UserService;
 
 @RestController
 @RequestMapping("user")
-@CrossOrigin(origins = "https://gregarious-banoffee-228c22.netlify.app/")
+@CrossOrigin(origins = "newsfactchecker.netlify.appp/")
 public class UserController {
 	
 	
