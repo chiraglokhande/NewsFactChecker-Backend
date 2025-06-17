@@ -14,7 +14,7 @@ import com.factchecker.factChecker.entity.Claims;
 
 @RestController
 @RequestMapping("factcheck")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://gregarious-banoffee-228c22.netlify.app/")
 public class FactController {
 
 	@Value("${key}")
