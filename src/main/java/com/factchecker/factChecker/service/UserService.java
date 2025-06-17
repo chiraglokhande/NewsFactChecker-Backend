@@ -34,7 +34,7 @@ public class UserService {
 			User userNew = new User();
 			userNew.setAge(user.getAge());
 			userNew.setName(user.getName());
-			userNew.setRole("Admin");
+			userNew.setRole("User");
 			userNew.setUsername(user.getUsername());
 			userNew.setPassword(encode.encode(user.getPassword()));
 

@@ -23,7 +23,7 @@ import com.factchecker.factChecker.util.JwtUtil;
 
 @RestController
 @RequestMapping("authenticate")
-@CrossOrigin(origins = "newsfactchecker.netlify.app/") 
+@CrossOrigin(origins = "https://newsfactchecker.netlify.app/") 
 public class AuthenticationController {
 
 	@Autowired
